@@ -1,0 +1,618 @@
+@use "../../styles/tokens" as tokens;
+
+@use "../../styles/mixins" as mixins;
+
+.home {
+  overflow: hidden;
+}
+
+.container {
+  @include mixins.container;
+}
+
+/* HERO */
+.hero {
+  padding-block: 100px 120px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.heroContent {
+  max-width: 900px;
+
+}
+
+.heroTitle {
+
+  @include mixins.display;
+
+  margin-bottom: 28px;
+
+}
+
+.heroDescription {
+
+  max-width: 680px;
+
+  margin-bottom: 36px;
+
+  @include mixins.body;
+
+  color: var(--color-text-secondary);
+
+}
+
+.heroActions {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+}
+
+/* SECTION */
+
+.section {
+
+  padding-block: 80px;
+
+  border-bottom: 1px solid var(--color-border);
+
+}
+
+.sectionHeading {
+
+  max-width: 720px;
+
+  margin-bottom: 48px;
+
+}
+
+.sectionTitle {
+
+  @include mixins.h2;
+
+  margin-bottom: 20px;
+
+}
+
+.sectionDescription {
+
+  max-width: 680px;
+
+  margin: 0;
+
+  @include mixins.body;
+
+  color: var(--color-text-secondary);
+
+}
+
+/* FEATURES */
+
+.featureGrid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  border-top: 1px solid var(--color-border);
+
+  border-left: 1px solid var(--color-border);
+
+}
+
+.featureCard {
+
+  min-height: 260px;
+
+  padding: 28px;
+
+  border-right: 1px solid var(--color-border);
+
+  border-bottom: 1px solid var(--color-border);
+
+  background: var(--color-bg);
+
+  transition: background-color var(--transition-normal);
+
+}
+
+.featureCard:hover {
+
+  background: var(--color-surface);
+
+}
+
+.featureIcon {
+
+  width: 40px;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 36px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-sm);
+
+  background: var(--color-surface);
+
+}
+
+.featureTitle {
+
+  @include mixins.h3;
+
+  margin-bottom: 12px;
+
+}
+
+.featureDescription {
+
+  margin: 0;
+
+  @include mixins.body;
+
+}
+
+/* ROLES */
+
+.rolesGrid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+}
+
+.roleCard {
+
+  padding: 32px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  background: var(--color-surface);
+
+}
+
+.roleNumber {
+
+  display: block;
+
+  margin-bottom: 60px;
+
+  color: var(--color-text-muted);
+
+  @include mixins.caption;
+
+}
+
+.roleTitle {
+
+  @include mixins.h3;
+
+  margin-bottom: 12px;
+
+}
+
+.roleDescription {
+
+  margin: 0;
+
+  @include mixins.body;
+
+}
+
+/* DEMO */
+
+.demo {
+
+  padding-block: 80px;
+
+  border-bottom: 1px solid var(--color-border);
+
+}
+
+.demoGrid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+
+}
+
+.demoCard {
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 32px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  background: var(--color-surface);
+
+}
+
+.demoCardHeader {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  margin-bottom: 24px;
+
+}
+
+.demoCardIcon {
+
+  flex-shrink: 0;
+
+  width: 44px;
+
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-sm);
+
+  background: var(--color-bg);
+
+}
+
+.demoCardLabel {
+
+  margin: 0 0 6px;
+
+  color: var(--color-text-muted);
+
+  @include mixins.caption;
+
+}
+
+.demoCardTitle {
+
+  margin: 0;
+
+  @include mixins.h3;
+
+}
+
+.demoCardDescription {
+
+  max-width: 600px;
+
+  margin: 0;
+
+  @include mixins.body;
+
+  color: var(--color-text-secondary);
+
+}
+
+.demoSteps {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+
+  margin-block: 32px;
+
+}
+
+.demoStep {
+
+  display: grid;
+
+  grid-template-columns: 28px 36px minmax(0, 1fr);
+
+  align-items: start;
+
+  gap: 12px;
+
+}
+
+.demoStepNumber {
+
+  padding-top: 8px;
+
+  color: var(--color-text-muted);
+
+  @include mixins.caption;
+
+}
+
+.demoStepIcon {
+
+  width: 36px;
+
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-sm);
+
+  background: var(--color-bg);
+
+}
+
+.demoStepTitle {
+
+  margin: 0 0 4px;
+
+  @include mixins.small;
+
+  font-weight: 600;
+
+}
+
+.demoStepDescription {
+
+  margin: 0;
+
+  @include mixins.small;
+
+  color: var(--color-text-secondary);
+
+}
+
+.demoCard > a {
+
+  align-self: flex-start;
+
+  margin-top: auto;
+
+}
+
+@media (max-width: tokens.$tablet) {
+
+  .demoGrid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .demo {
+
+    padding-block: 64px;
+
+  }
+
+  .demoCard {
+
+    padding: 24px;
+
+  }
+
+  .demoStep {
+
+    grid-template-columns: 24px 32px minmax(0, 1fr);
+
+    gap: 10px;
+
+  }
+
+  .demoStepIcon {
+
+    width: 32px;
+
+    height: 32px;
+
+  }
+
+}
+
+/* CTA */
+
+.cta {
+
+  padding-block: 80px;
+
+}
+
+.ctaInner {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding: 48px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  background: var(--color-surface);
+
+}
+
+.ctaTitle {
+
+  @include mixins.h2;
+
+  margin-bottom: 16px;
+
+}
+
+.ctaDescription {
+
+  max-width: 600px;
+
+  margin: 0;
+
+  @include mixins.body;
+
+}
+
+/* TABLET */
+
+@media (max-width: tokens.$tablet) {
+
+  .hero {
+
+
+    padding-block: 72px 88px;
+
+
+  }
+
+  .featureGrid {
+
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+
+  }
+
+  .rolesGrid {
+
+
+    grid-template-columns: 1fr;
+
+
+  }
+
+  .demoGrid {
+
+
+    grid-template-columns: 1fr;
+
+
+  }
+
+  .ctaInner {
+
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+  .hero {
+
+
+    padding-block: 56px 72px;
+
+
+  }
+
+  .featureGrid {
+
+
+    grid-template-columns: 1fr;
+
+
+  }
+
+  .featureCard {
+
+
+    min-height: auto;
+
+
+  }
+
+  .section,
+
+  .demo {
+
+
+    padding-block: 64px;
+
+
+  }
+
+  .demoCard {
+
+
+    padding: 24px;
+
+
+  }
+
+  .demoStep {
+
+
+    grid-template-columns: 24px 32px minmax(0, 1fr);
+
+    gap: 10px;
+
+
+  }
+
+  .demoStepIcon {
+
+
+    width: 32px;
+
+    height: 32px;
+
+
+  }
+
+  .cta {
+
+
+    padding-block: 64px;
+
+
+  }
+
+  .ctaInner {
+
+
+    padding: 28px;
+
+
+  }
+
+}

@@ -1,0 +1,383 @@
+@use "../../styles/tokens" as tokens;
+@use "../../styles/mixins" as mixins;
+
+.authPage {
+  min-height: calc(100vh - 144px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: tokens.$space-10 tokens.$container-padding-mobile;
+}
+
+.authCard {
+  width: 100%;
+  max-width: 480px;
+
+  padding: 40px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  background: var(--color-surface);
+}
+
+.eyebrow {
+  @include mixins.caption;
+
+  margin: 0 0 tokens.$space-4;
+
+  color: var(--color-text-muted);
+}
+
+.title {
+  @include mixins.h1;
+
+  margin: 0 0 tokens.$space-5;
+}
+
+.description {
+  @include mixins.body;
+
+  margin: 0 0 tokens.$space-8;
+
+  color: var(--color-text-secondary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  gap: tokens.$space-5;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+
+  gap: tokens.$space-2;
+}
+
+.label {
+  @include mixins.small;
+
+  color: var(--color-text);
+}
+
+.input {
+  width: 100%;
+  min-height: tokens.$input-height-mobile;
+
+  box-sizing: border-box;
+
+  padding: 0 tokens.$space-4;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  background: var(--color-bg);
+  color: var(--color-text);
+
+  font-family: var(--font-primary);
+  font-size: tokens.$font-size-body-mobile;
+
+  outline: none;
+
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+
+  &::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  &:hover {
+    border-color: var(--color-border-strong);
+  }
+
+  &:focus {
+    border-color: var(--color-text);
+
+
+    box-shadow:
+      0 0 0 3px var(--color-overlay);
+
+
+  }
+}
+
+.form button {
+  width: 100%;
+
+  margin-top: tokens.$space-2;
+}
+
+.error {
+  margin: 0;
+
+  padding: 12px 14px;
+
+  border: 1px solid var(--color-danger,
+      #dc2626);
+
+  border-radius: var(--radius-sm);
+
+  color: var(--color-danger,
+      #dc2626);
+
+  @include mixins.small;
+}
+
+/* DEMO */
+
+.demo {
+  margin-top: tokens.$space-8;
+}
+
+.demoDivider {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: tokens.$space-6;
+
+  color: var(--color-text-muted);
+
+  @include mixins.caption;
+
+  &::before,
+  &::after {
+    content: "";
+
+
+    flex: 1;
+
+    height: 1px;
+
+    background: var(--color-border);
+
+
+  }
+
+  span {
+    flex-shrink: 0;
+  }
+}
+
+.demoTitle {
+  margin: 0 0 tokens.$space-2;
+
+  @include mixins.h3;
+}
+
+.demoDescription {
+  margin: 0 0 tokens.$space-5;
+
+  color: var(--color-text-secondary);
+
+  @include mixins.small;
+}
+
+.demoAccounts {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.demoAccount {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  padding: 14px 16px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  background: var(--color-bg);
+  color: var(--color-text);
+
+  font-family: var(--font-primary);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+
+  &:hover:not(:disabled) {
+    border-color: var(--color-border-strong);
+
+
+    background: var(--color-surface);
+
+
+  }
+
+  &:focus-visible {
+    outline: none;
+
+
+    border-color: var(--color-text);
+
+    box-shadow:
+      0 0 0 3px var(--color-overlay);
+
+
+  }
+
+  &:disabled {
+    cursor: default;
+
+
+    opacity: 0.6;
+
+
+  }
+}
+
+.demoAccountSelected {
+  border-color: var(--color-text);
+
+  background: var(--color-surface);
+}
+
+.demoRole {
+  @include mixins.small;
+
+  font-weight: 600;
+}
+
+.demoEmail {
+  overflow: hidden;
+
+  color: var(--color-text-muted);
+
+  @include mixins.caption;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.demoHint {
+  margin: tokens.$space-4 0 0;
+
+  color: var(--color-text-muted);
+
+  @include mixins.small;
+
+  text-align: center;
+}
+
+/* FOOTER */
+
+.footer {
+  @include mixins.small;
+
+  margin: tokens.$space-7 0 0;
+
+  color: var(--color-text-secondary);
+
+  text-align: center;
+}
+
+.link {
+  color: var(--color-text);
+
+  font-weight: 600;
+
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  transition: opacity var(--transition-fast);
+
+  &:hover {
+    opacity: 0.65;
+  }
+}
+
+/* TABLET */
+
+@media (min-width: tokens.$tablet) {
+  .authPage {
+    min-height: calc(100vh - 144px);
+
+
+    padding-inline: tokens.$container-padding-tablet;
+
+
+  }
+
+  .authCard {
+    padding: 48px;
+  }
+
+  .input {
+    min-height: tokens.$input-height-tablet;
+
+
+    font-size: tokens.$font-size-body-tablet;
+
+
+  }
+}
+
+/* DESKTOP */
+
+@media (min-width: tokens.$desktop) {
+  .authPage {
+    min-height: calc(100vh - 144px);
+  }
+
+  .input {
+    min-height: tokens.$input-height-desktop;
+
+
+    font-size: tokens.$font-size-body-desktop;
+
+
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .authPage {
+    align-items: flex-start;
+
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+
+  }
+
+  .authCard {
+    padding: 28px;
+  }
+
+  .demoAccount {
+    align-items: flex-start;
+
+
+    flex-direction: column;
+
+    gap: 4px;
+
+
+  }
+
+  .demoEmail {
+    max-width: 100%;
+  }
+}
