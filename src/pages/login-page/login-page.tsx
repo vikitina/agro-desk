@@ -15,6 +15,11 @@ import {
 
 import styles from "./login-page.module.scss";
 
+type TranslationParams = Record<
+  string,
+  string | number
+>;
+
 export default function LoginPage() {
   const language = useLanguageStore(
     (state) => state.language
@@ -22,8 +27,32 @@ export default function LoginPage() {
 
   const navigate = useNavigate();
 
-  const t = (key: string) =>
-    getTranslation(language, key);
+  const t = (
+  key: string,
+  params?: TranslationParams
+) => {
+  const translation = getTranslation(
+    language,
+    key
+  );
+
+  if (!params) {
+    return translation;
+  }
+
+  return Object.entries(params).reduce(
+    (text, [name, parameterValue]) => {
+      const value = String(parameterValue);
+
+      return text
+        .split(`{{${name}}}`)
+        .join(value)
+        .split(`{${name}}`)
+        .join(value);
+    },
+    translation
+  );
+};
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
