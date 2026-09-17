@@ -11,15 +11,15 @@ export interface DemoAccount {
 export const demoAccounts: DemoAccount[] = [
   {
     role: "administrator",
-    email: "[demo.admin@example.com](mailto:demo.admin@example.com)",
+    email: "demo.admin@example.com",
   },
   {
     role: "manager",
-    email: "[demo.manager@example.com](mailto:demo.manager@example.com)",
+    email: "demo.manager@example.com",
   },
   {
     role: "viewer",
-    email: "[demo.viewer1@example.com](mailto:demo.viewer1@example.com)",
+    email: "demo.viewer1@example.com",
   },
 ];
 
