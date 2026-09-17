@@ -5,6 +5,7 @@ import { navigation } from "./navigation";
 import { profile } from "./profile";
 import { roles } from "./roles";
 import { users } from "./users";
+import { login } from "./login";
 
 export const en = {
     common,
@@ -25,20 +26,7 @@ export const en = {
     home,
     profile,
 
-    login: {
-      eyebrow: "AUTHENTICATION",
-      title: "Sign in",
-      description:
-        "Use your account or one of the demonstration accounts to enter the application.",
-
-      email: "Email",
-      password: "Password",
-
-      submit: "Sign in",
-
-      noAccount: "Don't have an account?",
-      createAccount: "Create one",
-    },
+    login,
 
     register: {
       eyebrow: "NEW ACCOUNT",

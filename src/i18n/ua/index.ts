@@ -5,6 +5,7 @@ import { navigation } from "./navigation";
 import { profile } from "./profile";
 import { roles } from "./roles";
 import { users } from "./users";
+import { login } from "./login";
 
 export const uk = {
     common,
@@ -25,21 +26,7 @@ export const uk = {
 
     home,
     profile,
-
-    login: {
-      eyebrow: "АВТОРИЗАЦІЯ",
-      title: "Вхід",
-      description:
-        "Використайте свій акаунт або один із демонстраційних акаунтів.",
-
-      email: "Email",
-      password: "Пароль",
-
-      submit: "Увійти",
-
-      noAccount: "Ще немає акаунта?",
-      createAccount: "Створити",
-    },
+    login,
 
     register: {
       eyebrow: "НОВИЙ АКАУНТ",
