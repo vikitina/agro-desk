@@ -1,7 +1,7 @@
 export const roles = {
   "eyebrow": "ACCESS CONTROL",
   "title": "Roles",
-  "description": "Roles define which operations users can perform in RoleDesk.",
+  "description": "Roles define which operations users can perform in AgroDesk.",
   "loading": "Loading roles...",
   "loadError": "Failed to load roles.",
   "empty": "No roles found.",

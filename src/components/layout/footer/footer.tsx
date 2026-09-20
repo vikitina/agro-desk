@@ -13,7 +13,7 @@ export default function Footer() {
         <span>{t("footer.text")}</span>
 
         <span>
-          React · TypeScript · Supabase · Builder
+          React · TypeScript · Supabase · Builder.io
         </span>
       </div>
     </footer>

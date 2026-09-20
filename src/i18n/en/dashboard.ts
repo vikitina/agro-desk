@@ -1,6 +1,6 @@
 export const dashboard = {
   eyebrow: "DASHBOARD",
-  title: "Welcome to RoleDesk",
+  title: "Welcome to AgroDesk",
   description:
     "This dashboard gives you an overview of the access control system and its main resources.",
   noAccess:

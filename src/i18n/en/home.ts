@@ -92,7 +92,7 @@ export const home = {
     title: "Try the application",
 
     description:
-      "Explore RoleDesk with demo accounts or create your own user and see how roles change the available access.",
+      "Explore AgroDesk with demo accounts or create your own user and see how roles change the available access.",
 
     quick: {
       label: "QUICK DEMO",

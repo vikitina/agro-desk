@@ -1,6 +1,6 @@
 export const dashboard = {
   eyebrow: "ПАНЕЛЬ КЕРУВАННЯ",
-  title: "Вітаємо в RoleDesk",
+  title: "Вітаємо в AgroDesk",
   description:
     "Ця панель дає огляд системи контролю доступу та її основних ресурсів.",
   noAccess:
