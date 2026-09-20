@@ -74,7 +74,9 @@ export default function Header() {
           <Link to="/">
             {t("navigation.home")}
           </Link>
-
+          <Link to="/blog">
+            {t("navigation.blog")}
+          </Link>
           {isAuthenticated ? (
             <>
               <Link to="/dashboard">

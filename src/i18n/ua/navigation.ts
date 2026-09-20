@@ -4,4 +4,5 @@ export const navigation = {
   login: "Увійти",
   register: "Реєстрація",
   logout: "Вийти",
+  blog: "Блог",
 }

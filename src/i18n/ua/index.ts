@@ -52,7 +52,7 @@ export const uk = {
     },
 
     footer: {
-      text: "RoleDesk — демонстраційний застосунок",
+      text: "AgroDesk — демонстраційний застосунок",
     },
 
     users,
