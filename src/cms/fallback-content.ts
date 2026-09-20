@@ -214,6 +214,8 @@ export const fallbackLandingPages: Record<
 
 export const fallbackBlogPosts: BlogPostData[] = [
   {
+    locale: "en",
+    translationKey: "location-data-field-planning",
     slug: "location-data-field-planning",
 
     title:
@@ -251,6 +253,8 @@ export const fallbackBlogPosts: BlogPostData[] = [
   },
 
   {
+    locale: "en",
+    translationKey: "role-based-access-agriculture-teams",
     slug: "role-based-access-agriculture-teams",
 
     title:
@@ -288,6 +292,8 @@ export const fallbackBlogPosts: BlogPostData[] = [
   },
 
   {
+    locale: "en",
+    translationKey: "prepare-data-growing-season",
     slug: "prepare-data-growing-season",
 
     title:
