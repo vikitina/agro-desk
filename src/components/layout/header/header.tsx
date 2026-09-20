@@ -67,7 +67,7 @@ export default function Header() {
           to="/"
           className={styles.logo}
         >
-          RoleDesk
+          AgroDesk
         </Link>
 
         <nav className={styles.navigation}>
