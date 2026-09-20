@@ -6,7 +6,7 @@ import {
 import type { Language } from "../types/common";
 import { builderConfig } from "./builder.config";
 import {
-  fallbackBlogPosts,
+  fallbackBlogPostsByLanguage,
   fallbackLandingPages,
 } from "./fallback-content";
 import type {
@@ -27,10 +27,10 @@ const extractData = <T>(
 const sortPostsByDate = (
   posts: BlogPostData[]
 ): BlogPostData[] => {
-  return [...posts].sort((first, second) =>
-    second.publishedAt.localeCompare(
-      first.publishedAt
-    )
+  return [...posts].sort(
+    (firstPost, secondPost) =>
+      new Date(secondPost.publishedAt).getTime() -
+      new Date(firstPost.publishedAt).getTime()
   );
 };
 
@@ -80,58 +80,48 @@ export const getLandingPageContent =
     }
   };
 
-export const getBlogPosts =
-  async (): Promise<BlogPostData[]> => {
-    if (!builderConfig.isConfigured) {
-      return sortPostsByDate(
-        fallbackBlogPosts
-      );
-    }
+export async function getBlogPosts(
+  language: Language
+): Promise<BlogPostData[]> {
+  const fallbackPosts = sortPostsByDate(
+    fallbackBlogPostsByLanguage[language]
+  );
 
-    try {
-      const entries = await fetchEntries({
-        apiKey: builderConfig.apiKey,
-        model: builderConfig.models.blogPost,
-      });
+  if (!builderConfig.isConfigured) {
+    return fallbackPosts;
+  }
 
-      const posts = (entries ?? [])
-        .map((entry) =>
-          extractData<BlogPostData>(entry)
-        )
-        .filter(
-          (
-            post
-          ): post is BlogPostData =>
-            post !== null
-        );
+  try {
+    const entries = await fetchEntries({
+      model: builderConfig.models.blogPost,
+      apiKey: builderConfig.apiKey,
+    });
 
-      if (posts.length === 0) {
-        return sortPostsByDate(
-          fallbackBlogPosts
-        );
-      }
+    const posts = entries
+      .map((entry) => entry.data as BlogPostData)
+      .filter((post) => post.locale === language);
 
-      return sortPostsByDate(posts);
-    } catch (error) {
-      console.error(
-        "Failed to load blog posts from Builder:",
-        error
-      );
+    return posts.length > 0
+      ? posts
+      : fallbackPosts;
+  } catch (error) {
+    console.error(
+      "Failed to load blog posts from Builder.io:",
+      error
+    );
 
-      return sortPostsByDate(
-        fallbackBlogPosts
-      );
-    }
-  };
+    return fallbackPosts;
+  }
+};
 
-export const getBlogPostBySlug = async (
-  slug: string
-): Promise<BlogPostData | null> => {
-  const posts = await getBlogPosts();
+export async function getBlogPostBySlug(
+  slug: string,
+  language: Language
+): Promise<BlogPostData | null> {
+  const posts = await getBlogPosts(language);
 
   return (
-    posts.find(
-      (post) => post.slug === slug
-    ) ?? null
+    posts.find((post) => post.slug === slug) ??
+    null
   );
 };
