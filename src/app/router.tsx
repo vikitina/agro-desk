@@ -14,6 +14,7 @@ import UsersPage from "../pages/users-page";
 import ProfilePage from "../pages/profile-page";
 import RolesPage from "../pages/roles-page";
 import RoleDetailsPage from "../pages/role-details-page";
+import BlogPage from "../pages/blog-page";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+      },
+
+      {
+        path: "/blog",
+        element: <BlogPage />,
       },
 
       {
