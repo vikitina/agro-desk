@@ -100,57 +100,50 @@
 }
 
 .cardVisual {
+  position: relative;
   min-height: 220px;
+  overflow: hidden;
   display: flex;
   align-items: flex-end;
   padding: 28px;
-  color: rgba(255, 255, 255, 0.85);
-  background:
-    linear-gradient(
-      145deg,
-      rgba(13, 67, 45, 0.25),
-      transparent 60%
-    ),
-    linear-gradient(
-      135deg,
-      #173f30,
-      #4f8a5f
-    );
+  isolation: isolate;
+  background: #315f43;
 }
 
-.card:nth-child(2) .cardVisual {
-  background:
-    linear-gradient(
-      145deg,
-      rgba(33, 78, 52, 0.15),
-      transparent 60%
-    ),
-    linear-gradient(
-      135deg,
-      #315a42,
-      #86a96f
-    );
+.cardVisual::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 40%,
+    rgba(12, 35, 24, 0.72)
+  );
 }
 
-.card:nth-child(3) .cardVisual {
-  background:
-    linear-gradient(
-      145deg,
-      rgba(67, 55, 26, 0.15),
-      transparent 60%
-    ),
-    linear-gradient(
-      135deg,
-      #5c6d3f,
-      #b29a5b
-    );
+.cardImage {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
 }
 
-.cardVisual span {
+.card:hover .cardImage {
+  transform: scale(1.035);
+}
+
+.cardNumber {
+  position: relative;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 3.5rem;
   font-weight: 600;
   line-height: 1;
-  opacity: 0.35;
+  opacity: 0.6;
 }
 
 .cardContent {

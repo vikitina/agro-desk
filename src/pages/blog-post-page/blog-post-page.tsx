@@ -222,6 +222,13 @@ export default function BlogPostPage() {
               <strong>{post.author}</strong>
             </p>
           </div>
+          <div className={styles.cover}>
+            <img
+              className={styles.coverImage}
+              src={post.coverImage.url}
+              alt={post.coverImage.alt}
+            />
+          </div>
         </div>
       </header>
 

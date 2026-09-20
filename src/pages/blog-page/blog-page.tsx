@@ -174,8 +174,8 @@ export default function BlogPage() {
                 {posts.map((post, index) => (
                   <article
                     className={`${styles.card} ${post.featured
-                        ? styles.featuredCard
-                        : ""
+                      ? styles.featuredCard
+                      : ""
                       }`}
                     key={`${post.locale}-${post.slug}`}
                   >
@@ -183,16 +183,21 @@ export default function BlogPage() {
                       className={styles.cardLink}
                       to={`/blog/${post.slug}`}
                     >
-                      <div
-                        className={
-                          styles.cardVisual
-                        }
-                        aria-hidden="true"
-                      >
-                        <span>
-                          {String(
-                            index + 1
-                          ).padStart(2, "0")}
+                      <div className={styles.cardVisual}>
+                        <img
+                          className={styles.cardImage}
+                          src={post.coverImage.url}
+                          alt={post.coverImage.alt}
+                          loading={
+                            post.featured ? "eager" : "lazy"
+                          }
+                        />
+
+                        <span
+                          className={styles.cardNumber}
+                          aria-hidden="true"
+                        >
+                          {String(index + 1).padStart(2, "0")}
                         </span>
                       </div>
 

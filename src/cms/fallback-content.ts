@@ -233,7 +233,7 @@ export const fallbackBlogPostsByLanguage: Record<
       publishedAt: "2026-09-18",
 
       coverImage: {
-        url: "/images/agro/location-data.jpg",
+        url: "/images/agro/field-planning.png",
         alt: "Aerial view of agricultural fields",
       },
 
@@ -272,7 +272,7 @@ export const fallbackBlogPostsByLanguage: Record<
       publishedAt: "2026-09-12",
 
       coverImage: {
-        url: "/images/agro/team-access.jpg",
+        url: "/images/agro/team-access.png",
         alt: "Agricultural team reviewing field information",
       },
 
@@ -311,7 +311,7 @@ export const fallbackBlogPostsByLanguage: Record<
       publishedAt: "2026-09-05",
 
       coverImage: {
-        url: "/images/agro/season-planning.jpg",
+        url: "/images/agro/growing-season.png",
         alt: "Green crop rows during the growing season",
       },
 
@@ -347,7 +347,7 @@ export const fallbackBlogPostsByLanguage: Record<
       author: "Команда AgroDesk",
       publishedAt: "2026-09-12",
       coverImage: {
-        url: "/images/agro/field-planning.jpg",
+        url: "/images/agro/field-planning.png",
         alt: "Сільськогосподарські поля з висоти",
       },
       sections: [
@@ -388,7 +388,7 @@ export const fallbackBlogPostsByLanguage: Record<
       author: "Команда AgroDesk",
       publishedAt: "2026-09-05",
       coverImage: {
-        url: "/images/agro/team-access.jpg",
+        url: "/images/agro/team-access.png",
         alt: "Агрокоманда обговорює робочі дані",
       },
       sections: [
@@ -428,7 +428,7 @@ export const fallbackBlogPostsByLanguage: Record<
       author: "Команда AgroDesk",
       publishedAt: "2026-08-28",
       coverImage: {
-        url: "/images/agro/growing-season.jpg",
+        url: "/images/agro/growing-season.png",
         alt: "Підготовка сільськогосподарського поля до нового сезону",
       },
       sections: [
