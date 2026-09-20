@@ -15,6 +15,7 @@ import ProfilePage from "../pages/profile-page";
 import RolesPage from "../pages/roles-page";
 import RoleDetailsPage from "../pages/role-details-page";
 import BlogPage from "../pages/blog-page";
+import BlogPostPage from "../pages/blog-post-page";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,11 @@ export const router = createBrowserRouter([
       {
         path: "/blog",
         element: <BlogPage />,
+      },
+
+      {
+        path: "/blog/:slug",
+        element: <BlogPostPage />,
       },
 
       {
